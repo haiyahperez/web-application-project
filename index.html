@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>flor.</title>
+</head>
+<body>
+    <section>
+    <h1 class="title">flor.</h1>
+    </section>
+    <main>
+        <fieldset class="new-flower-form">
+        <h2>Add a flower</h2>
+        <form id="new-flower">
+            <label for="name" required
+            >Flower Name
+            <input id="name" name="name" type="text" required/>
+            </label>
+            <label for="color" required
+            >Color
+            <input id="color" name="color" type="text" required />
+            </label>
+            <label for="origin" required
+            >Origin
+            <input id="origin" name="origin" type="text" required />
+            </label>
+            <label for="price"
+            >Price <label for="price" type="number"></label>
+            </label>
+            <br>
+            <label>
+            <input type="radio" name="in-stock">
+            In Stock
+            </label>
+            <br>
+            <label>
+            <input type="radio" name="out-of-stock">
+            Out of Stock
+            </label>
+        <br>
+        <button type="submit">Add flower</button>
+    </form>
+</section>
+
+
+<fieldset class="inventory"></section>
+<header> <h2>Current Inventory <span class="inventory-count">(Inventory Quantity: 4)</span></h2></header>
+<section>
+    <ul>
+        <img src="./images/rose.jpg" alt="Rose-Bouquet">
+        <li class="inventory-flower-a">
+            <p><strong>Name</strong>: Rose </p>
+            <p><strong>Color:</strong> Red </p>
+            <p><strong>Origin:</strong> China </p>
+            <p><strong>Price:</strong> $ 25.00</p>
+            <p><strong>In Stock:</strong> Yes</p>
+
+            <button>Remove flower</button>
+        </li>
+        <br>
+        <img src="./images/tulips.jpg" alt="Tulips">
+        <li class="inventory-flower-b">
+            <p><strong>Name</strong>: Tulip </p>
+            <p><strong>Color:</strong>
+                <label> 
+                    <select id="select color" name= "color">
+                        <option value="Red">Red</option>
+                        <option value="Pink">Pink</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Orange">Orange</option>
+                    </select>
+                </label>
+            </p>
+            <p><strong>Origin:</strong> Holland </p>
+            <p><strong>Price:</strong> $ 25.00</p>
+            <p><strong>In Stock:</strong> Yes</p>
+
+            <button>Remove flower</button>
+        </li>
+        <br>
+        <img src="./images/lavender.jpg" alt="Lavender">
+        <li class="inventory-flower-c">
+            <p><strong>Name</strong>: Lavender </p>
+            <p><strong>Color:</strong> Violet </p>
+            <p><strong>Origin:</strong> France </p>
+            <p><strong>Price:</strong> $ 17.00</p>
+            <p><strong>In Stock:</strong> Yes</p>
+            <button>Remove flower</button>
+        </li>
+        <br>
+        <img src="./images/sunflower.jpg" alt="sunflower">
+        <li class="inventory-flower-d">
+            <p><strong>Name</strong>: Sunflower </p>
+            <p><strong>Color:</strong> Yellow </p>
+            <p><strong>Origin:</strong>
+                <label> 
+                    <select id="select origin" name= "origin">
+                        <option value="Sun">Sun</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="United States">United States</option>
+                    </select>
+                </label>
+            </p></p>
+            <p><strong>Price:</strong> $ 25.00</p>
+            <p><strong>In Stock:</strong> Yes</p>
+
+            <button>Remove flower</button>
+        </li>
+    </ul>
+</section>
+    </main>
+</body>
