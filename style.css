@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&family=Montserrat+Alternates:ital,wght@1,700&family=Quicksand:wght@500&family=Red+Hat+Display:wght@400;600&family=Rubik+Mono+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&family=Montserrat+Alternates:ital,wght@1,700&family=Quicksand:wght@500&family=Red+Hat+Display:wght@600&family=Rubik+Mono+One&display=swap');
 
+body{
+  margin: 0px;
+}
 *{
     background-color: #ffffff;
+}
+.header-img{
+    width: 100%;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
 .title{
@@ -11,6 +22,11 @@
     font-size: 7rem;
     text-shadow:0 0 5px #945e7f;
     text-align: center;
+  }
+  
+img {
+    width: 200px; 
+    height: 200px; 
 }
 
 h2,
@@ -23,4 +39,46 @@ button{
     color: #352035;
 }
 
+@media (max-width:1200px){
+main{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 
+.new-flower-form,
+.new-flower{
+  padding: 90px ;
+  text-align: left;
+  font-size: 1.75rem;
+}
+
+.inventory-flower-a,
+.inventory-flower-b,
+.inventory-flower-c,
+.inventory-flower-d{
+  border: 3px solid #ff9eda ;
+  text-align: center;
+  padding: 10px;
+  margin: 30px;
+}
+
+.inventory{
+  display: grid;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+}
+
+
+
+
+
+
+@media (max-width: 992px) {
+  /* Rules here apply to devices from 992px to 1199px (inclusive) */
+}
+
+@media (max-width: 768px) {
+  /* Rules here apply to devices from from 768px to 991px (inclusive) */
+}
