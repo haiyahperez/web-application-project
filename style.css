@@ -23,7 +23,8 @@ body{
     text-shadow:0 0 5px #945e7f;
     text-align: center;
   }
-  
+
+
 img {
     width: 200px; 
     height: 200px; 
@@ -39,15 +40,26 @@ button{
     color: #352035;
 }
 
-@media (max-width:1200px){
+form button[type="submit"]:hover{
+  background: rgb(85, 175, 85);
+  color: white
+}
+
+form button[type="reset"]:hover,
+button[type="remove"]:hover{
+  background: #C21E56;
+  color: #ffffff;
+}
+
+@media (max-width:2118px){
 main{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2,1fr);
 }
 
 .new-flower-form,
 .new-flower{
-  padding: 90px ;
+  padding: 50px ;
   text-align: left;
   font-size: 1.75rem;
 }
@@ -59,7 +71,7 @@ main{
   border: 3px solid #ff9eda ;
   text-align: center;
   padding: 10px;
-  margin: 30px;
+  margin: 10px;
 }
 
 .inventory{
@@ -71,14 +83,48 @@ main{
 }
 
 
+@media (max-width: 900px) {
+  main{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .new-flower-form,
+  .new-flower{
+    padding: 0px 10px 35px 20px ;
+    margin: 35px 35px;
+    text-align: center;
+    font-size: 1.15rem;
+    border: 2px solid #ff9eda;
+  }
 
+  .name,
+  .color,
+  .origin,
+  .price,
+  .radio{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  .inventory-flower-a,
+  .inventory-flower-b,
+  .inventory-flower-c,
+  .inventory-flower-d{
+    border: 3px solid #ff9eda ;
+    text-align: center;
+    padding: 10px;
+    margin: 30px;
+  }
 
+  
+  .inventory{
+    display: grid;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto; 
 
-
-@media (max-width: 992px) {
-  /* Rules here apply to devices from 992px to 1199px (inclusive) */
 }
-
-@media (max-width: 768px) {
-  /* Rules here apply to devices from from 768px to 991px (inclusive) */
 }

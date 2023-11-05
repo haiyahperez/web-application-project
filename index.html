@@ -14,7 +14,7 @@
     </header>
     <main>
         <section class="new-flower-form">
-        <h2>Add a flower</h2>
+        <h2 class="form-title">Add a flower</h2>
         <form id="new-flower">
             <label for="name" required
             >Flower Name
@@ -37,7 +37,7 @@
             </label>
             <br>
             <label>
-            <input type="radio" name="in-stock">
+            <input type="radio" name="in-stock" checked>
             In Stock
             </label>
             <br>
@@ -45,14 +45,15 @@
             <input type="radio" name="out-of-stock">
             Out of Stock
             </label>
-        <br>
+            <br>
         <button type="submit">Add flower</button>
-    </form>
+        <button type="reset">Reset</button>
+        </form>
 </section>
 
 
 <section class="inventory">
-<header> <h2>Current Inventory <span class="inventory-count">(Inventory Quantity: 4)</span></h2></header>
+<header> <h2>Current Inventory <span class="count">(Inventory Quantity: 4)</span></h2></header>
     <ul>
         <li class="inventory-flower-a">
         <img src="./images/rose.jpg" alt="Rose-Bouquet">
@@ -62,7 +63,7 @@
             <p><strong>Price:</strong> $ 25.00</p>
             <p><strong>In Stock:</strong> Yes</p>
 
-            <button>Remove flower</button>
+            <button type="remove">Remove flower</button>
         </li>
     </ul>
     <ul>
@@ -82,7 +83,7 @@
             <p><strong>Origin:</strong> Holland </p>
             <p><strong>Price:</strong> $ 25.00</p>
             <p><strong>In Stock:</strong> Yes</p>
-            <button>Remove flower</button>
+            <button type="remove">Remove flower</button>
         </li>
     </ul>
      <ul>
@@ -93,7 +94,7 @@
             <p><strong>Origin:</strong> France </p>
             <p><strong>Price:</strong> $ 17.00</p>
             <p><strong>In Stock:</strong> Yes</p>
-            <button>Remove flower</button>
+            <button type="remove">Remove flower</button>
         </li>
     </ul>
     <ul>
@@ -113,7 +114,7 @@
             </p></p>
             <p><strong>Price:</strong> $ 25.00</p>
             <p><strong>In Stock:</strong> Yes</p>
-            <button>Remove flower</button>
+            <button type="remove">Remove flower</button>
         </li>
     </ul>
 </section>
