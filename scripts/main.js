@@ -2,6 +2,7 @@ const form = document.querySelector("form");
 const inventoryFlower = document.querySelector("ul");
 const flowerList = document.querySelectorAll("li"); //this is an ARRAY!
 const inStock = document.createElement("button");
+let count = 4; 
 
 function addFlower(name, color, origin, price, stock) {
     const li = document.createElement("li");
@@ -30,13 +31,18 @@ function addFlower(name, color, origin, price, stock) {
         }
     })
     inventoryFlower.append(li);
+    count++; 
+    flowerCount(count);
     const remove = document.createElement("button");
-    li.append(remove)
+    li.append(remove);
     remove.textContent = "Remove flower"
     remove.classList.add("remove")
     remove.addEventListener("click", () => {
         li.remove()
+        count--; 
+        flowerCount(count);
     })
+
 }
 }
 
@@ -47,6 +53,7 @@ flowerList.forEach(flower => {
     removeButton.addEventListener("click", () => {
         flower.remove();
         count--; 
+        flowerCount(count);
     })
     stockButton.addEventListener("click", () => {
         if(stockButton.classList.contains("in-stock")){
@@ -59,10 +66,9 @@ flowerList.forEach(flower => {
     })
 })
 
-function addCount(){
-    let count = 4; 
-    count++; 
-    
+function flowerCount(count){ 
+    const inventoryCount = document.querySelector(".count")
+    inventoryCount.textContent = `Current Inventory (Inventory Quantity: ${count})`
 }
 
 form.addEventListener("submit", (event) => {
