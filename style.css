@@ -81,9 +81,11 @@ button[type="remove"]:hover{
 
 .new-flower-form,
 .new-flower{
-  padding: 0px 50px 50px 0px;
-  text-align: left;
-  font-size: 1.75rem;
+  padding: 0px 10px 35px 20px ;
+  margin: 35px 35px;
+  text-align: center;
+  font-size: 1.15rem;
+  border: 2px solid #ff9eda;
 }
 
 .inventory-flower{
