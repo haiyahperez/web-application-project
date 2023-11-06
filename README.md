@@ -2,7 +2,7 @@
 
 ## **_Welcome to 'flor.'! Here we can help you find flowers your heart desires. Immerse yourself in a garden of dreams, where each delicate blossom tells a tale of love and masterpiece of affection._**
 
-## Visit our website at: https://github.com/haiyahperez/web-application-project.git
+## Visit our website at: https://haiyahperez.github.io/web-application-project/
 
 ## How to use our website:
 
