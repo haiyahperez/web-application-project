@@ -1,20 +1,20 @@
 const form = document.querySelector("form");
 const inventoryFlower = document.querySelector("ul");
 const flowerList = document.querySelectorAll("li"); //this is an ARRAY!
-const inStock = document.createElement("button");
 let count = 4; 
 
 function addFlower(name, color, origin, price, stock) {
+    const inStock = document.createElement("button");
     const li = document.createElement("li");
-        li.classList.add("inventory-flower");
+    li.classList.add("inventory-flower");
     if (name && color && origin && price) {
         li.innerHTML = 
-            `<p><strong>Name:</strong> ${name} </p>
-            <p><strong>Color:</strong> ${color} </p>
-            <p><strong>Origin:</strong> ${origin}</p>
-            <p><strong>Price:</strong> ${price}</p>`
+        `<p><strong>Name:</strong> ${name} </p>
+        <p><strong>Color:</strong> ${color} </p>
+        <p><strong>Origin:</strong> ${origin}</p>
+        <p><strong>Price:</strong> ${price}</p>`
         li.append(inStock)
-    if (stock === "true") {
+        if (stock === "yes") {
         inStock.classList.add("in-stock")
         inStock.textContent = "In Stock"
         count++;
@@ -43,11 +43,14 @@ function addFlower(name, color, origin, price, stock) {
     li.append(remove);
     remove.textContent = "Remove flower"
     remove.classList.add("remove")
+
    
     remove.addEventListener("click", () => {
         li.remove()
-        count--; 
-        flowerCount(count);
+        if (stockButton.classList.contains("in-stock")) {
+            count--; 
+            flowerCount(count);
+        }
     })
 }
 }
@@ -59,9 +62,12 @@ flowerList.forEach(flower => {
 
     removeButton.addEventListener("click", () => {
         flower.remove();
-        count--; 
-        flowerCount(count);
-    })
+        if (stockButton.classList.contains("in-stock")) {
+            count--; 
+            flowerCount(count);
+        }
+    });
+
     stockButton.addEventListener("click", () => {
         if(stockButton.classList.contains("in-stock")){
             stockButton.textContent = "Out of Stock";
@@ -74,8 +80,8 @@ flowerList.forEach(flower => {
             count++;
             flowerCount(count);
         }
-    })
-})
+    });
+});
 
 // helper function
 function flowerCount(count){ 

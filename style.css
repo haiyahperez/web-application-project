@@ -22,8 +22,7 @@ body{
     font-size: 7rem;
     text-shadow:0 0 5px #945e7f;
     text-align: center;
-
-  }
+}
 
 
 img {
@@ -38,12 +37,24 @@ label,
 button{
     font-family: 'Red Hat Display', sans-serif;
     list-style-type: none;
-    color: #352035;
+    color: #000000;
+}
+
+.count{
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  text-decoration: 5px underline #ff9eda;
 }
 
 button[type="submit"]:hover{
   background: rgb(85, 175, 85);
   color: white
+}
+
+button[class="remove"]:hover{
+  background: #C21E56;
+  color: white;
 }
 
 form button[type="reset"]:hover,
@@ -70,7 +81,7 @@ button[type="remove"]:hover{
 
 .new-flower-form,
 .new-flower{
-  padding: 50px ;
+  padding: 0px 50px 50px 0px;
   text-align: left;
   font-size: 1.75rem;
 }
