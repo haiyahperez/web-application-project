@@ -12,40 +12,47 @@ function addFlower(name, color, origin, price, stock) {
             `<p><strong>Name:</strong> ${name} </p>
             <p><strong>Color:</strong> ${color} </p>
             <p><strong>Origin:</strong> ${origin}</p>
-            <p><strong>Price:</strong> ${price}</p>`;
+            <p><strong>Price:</strong> ${price}</p>`
         li.append(inStock)
     if (stock === "true") {
         inStock.classList.add("in-stock")
         inStock.textContent = "In Stock"
+        count++;
     } else {
         inStock.classList.add("out-stock")
         inStock.textContent = "Out of Stock"
+
     }
     inStock.addEventListener("click", () => {
         if(inStock.classList.contains("in-stock")){
             inStock.textContent = "Out of Stock";
             inStock.classList.replace("in-stock", "out-stock");
+            count--;
+            flowerCount(count);
         } else {
             inStock.textContent = "In Stock";
             inStock.classList.replace("out-stock", "in-stock");
+            count++;
+            flowerCount(count);
         }
     })
     inventoryFlower.append(li);
-    count++; 
     flowerCount(count);
+   
     const remove = document.createElement("button");
     li.append(remove);
     remove.textContent = "Remove flower"
     remove.classList.add("remove")
+   
     remove.addEventListener("click", () => {
         li.remove()
         count--; 
         flowerCount(count);
     })
-
 }
 }
 
+// for all the inventory (first 4)
 flowerList.forEach(flower => {
     const removeButton = flower.querySelector(".remove");
     const stockButton = flower.querySelector(".stock");
@@ -59,13 +66,18 @@ flowerList.forEach(flower => {
         if(stockButton.classList.contains("in-stock")){
             stockButton.textContent = "Out of Stock";
             stockButton.classList.replace("in-stock", "out-stock");
+            count--;
+            flowerCount(count);
         } else {
             stockButton.textContent = "In Stock";
             stockButton.classList.replace("out-stock", "in-stock");
+            count++;
+            flowerCount(count);
         }
     })
 })
 
+// helper function
 function flowerCount(count){ 
     const inventoryCount = document.querySelector(".count")
     inventoryCount.textContent = `Current Inventory (Inventory Quantity: ${count})`
