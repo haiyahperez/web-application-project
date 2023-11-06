@@ -40,7 +40,7 @@ button{
     color: #352035;
 }
 
-form button[type="submit"]:hover{
+button[type="submit"]:hover{
   background: rgb(85, 175, 85);
   color: white
 }
@@ -51,9 +51,19 @@ button[type="remove"]:hover{
   color: #ffffff;
 }
 
+.in-stock{
+  background:rgb(85, 175, 85);
+  color: white
+}
+
+.out-stock{
+  background:#C21E56;
+  color: white
+}
+
 @media (max-width:2118px){
-main{
-  display: grid;
+  main{
+    display: grid;
   grid-template-columns: repeat(2,1fr);
 }
 
@@ -125,6 +135,5 @@ main{
     width: 100%;
     max-width: 500px;
     margin: 0 auto; 
-
 }
 }

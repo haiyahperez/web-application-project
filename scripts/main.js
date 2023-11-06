@@ -1,45 +1,48 @@
 const form = document.querySelector("form");
 
+function addFlower(name, color, origin, price, stock) {
+    const li = document.createElement("li");
+        li.classList.add("add-flower");
+    if (name && color && origin && price) {
+        li.innerHTML = 
+            `<p><strong>Name:</strong> ${name} </p>
+            <p><strong>Color:</strong> ${color} </p>
+            <p><strong>Origin:</strong> ${origin}</p>
+            <p><strong>Price:</strong> ${price}</p>`;
+    const button = document.createElement("button");
+        li.append(button)
+    if (stock === true) {
+        button.classList.add("in-stock")
+        button.textContent = "In Stock"
+    } else {
+        button.classList.add("out-stock")
+        button.textContent = "Out of Stock"
+    }
+}
+}
+
+
+
+function addCount(){
+    let count = 4; 
+    count++; 
+    
+}
+
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    console.log(event.target.name);
-})
-
-// function createFlower(name, color, origin, price) {
-//     const li = document.createElement("li");
-//     li.classList.add("add-flower");
-// }
-// if (name && color && origin && price) {
-//     li.innerHTML =  `<p><strong>Name</strong>: Rose </p>
-//     <p><strong>Color:</strong> Red </p>
-//     <p><strong>Origin:</strong> China </p>
-//     <p><strong>Price:</strong> $ 25.00</p>`
-//     <p><strong>In Stock:</strong> Yes</p>
-// }
+    const {name, color, origin, price, stock} = event.target;
+    addFlower(name.value, color.value, origin.value, price.value, stock.value);
+    form.reset();
+    addCount();
+    
+});
 
 
-// const form = document.querySelector("form")
-// const radioButton = document.querySelectorAll('input[type=["radio"]')
 
-// form.addEventListener("submit", (event) => {
-//     event.preventDefault();
-//     const {name, color, origin, price, radioButton } = event.target;
-//     addFlower(name.value, color.value, origin.value, price.value);
-// count++;
-// addCount(count);
-// form.reset();
-// });
 
-// radioButton.forEach(radio => {
-//     radio.addEventListener('change', () => {
-//         if (radio.checked){
-            
-//         }
-//     }
 
-//     )
-// })
+
 // Objectives: 
 // Let data persist. 
 // Create a flower: 
