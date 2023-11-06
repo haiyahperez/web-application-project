@@ -1,5 +1,7 @@
 const form = document.querySelector("form");
-const inventoryFlower= document.querySelector("ul")
+const inventoryFlower = document.querySelector("ul");
+const flowerList = document.querySelectorAll("li"); //this is an ARRAY!
+const inStock = document.createElement("button");
 
 function addFlower(name, color, origin, price, stock) {
     const li = document.createElement("li");
@@ -10,7 +12,6 @@ function addFlower(name, color, origin, price, stock) {
             <p><strong>Color:</strong> ${color} </p>
             <p><strong>Origin:</strong> ${origin}</p>
             <p><strong>Price:</strong> ${price}</p>`;
-    const inStock = document.createElement("button");
         li.append(inStock)
     if (stock === "true") {
         inStock.classList.add("in-stock")
@@ -19,16 +20,44 @@ function addFlower(name, color, origin, price, stock) {
         inStock.classList.add("out-stock")
         inStock.textContent = "Out of Stock"
     }
+    inStock.addEventListener("click", () => {
+        if(inStock.classList.contains("in-stock")){
+            inStock.textContent = "Out of Stock";
+            inStock.classList.replace("in-stock", "out-stock");
+        } else {
+            inStock.textContent = "In Stock";
+            inStock.classList.replace("out-stock", "in-stock");
+        }
+    })
     inventoryFlower.append(li);
     const remove = document.createElement("button");
     li.append(remove)
     remove.textContent = "Remove flower"
+    remove.classList.add("remove")
     remove.addEventListener("click", () => {
-        li.remove();
+        li.remove()
     })
 }
 }
 
+flowerList.forEach(flower => {
+    const removeButton = flower.querySelector(".remove");
+    const stockButton = flower.querySelector(".stock");
+
+    removeButton.addEventListener("click", () => {
+        flower.remove();
+        count--; 
+    })
+    stockButton.addEventListener("click", () => {
+        if(stockButton.classList.contains("in-stock")){
+            stockButton.textContent = "Out of Stock";
+            stockButton.classList.replace("in-stock", "out-stock");
+        } else {
+            stockButton.textContent = "In Stock";
+            stockButton.classList.replace("out-stock", "in-stock");
+        }
+    })
+})
 
 function addCount(){
     let count = 4; 
