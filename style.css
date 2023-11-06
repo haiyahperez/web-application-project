@@ -22,6 +22,7 @@ body{
     font-size: 7rem;
     text-shadow:0 0 5px #945e7f;
     text-align: center;
+
   }
 
 
@@ -74,10 +75,7 @@ button[type="remove"]:hover{
   font-size: 1.75rem;
 }
 
-.inventory-flower-a,
-.inventory-flower-b,
-.inventory-flower-c,
-.inventory-flower-d{
+.inventory-flower{
   border: 3px solid #ff9eda ;
   text-align: center;
   padding: 10px;

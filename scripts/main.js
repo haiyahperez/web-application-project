@@ -1,26 +1,33 @@
 const form = document.querySelector("form");
+const inventoryFlower= document.querySelector("ul")
 
 function addFlower(name, color, origin, price, stock) {
     const li = document.createElement("li");
-        li.classList.add("add-flower");
+        li.classList.add("inventory-flower");
     if (name && color && origin && price) {
         li.innerHTML = 
             `<p><strong>Name:</strong> ${name} </p>
             <p><strong>Color:</strong> ${color} </p>
             <p><strong>Origin:</strong> ${origin}</p>
             <p><strong>Price:</strong> ${price}</p>`;
-    const button = document.createElement("button");
-        li.append(button)
-    if (stock === true) {
-        button.classList.add("in-stock")
-        button.textContent = "In Stock"
+    const inStock = document.createElement("button");
+        li.append(inStock)
+    if (stock === "true") {
+        inStock.classList.add("in-stock")
+        inStock.textContent = "In Stock"
     } else {
-        button.classList.add("out-stock")
-        button.textContent = "Out of Stock"
+        inStock.classList.add("out-stock")
+        inStock.textContent = "Out of Stock"
     }
+    inventoryFlower.append(li);
+    const remove = document.createElement("button");
+    li.append(remove)
+    remove.textContent = "Remove flower"
+    remove.addEventListener("click", () => {
+        li.remove();
+    })
 }
 }
-
 
 
 function addCount(){
@@ -35,18 +42,4 @@ form.addEventListener("submit", (event) => {
     addFlower(name.value, color.value, origin.value, price.value, stock.value);
     form.reset();
     addCount();
-    
 });
-
-
-
-
-
-
-// Objectives: 
-// Let data persist. 
-// Create a flower: 
-    // Name, Color, Origin, Price, In Stock or Out of Stock
-    // Add upload file data= HTTPS://
-// Add count to inventory. 
-// Working reset button.

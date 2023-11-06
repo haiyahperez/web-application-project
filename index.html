@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script src="./scripts/main.js" defer></script>
     <title>flor.</title>
 </head>
 <body>
@@ -29,23 +30,23 @@
             </label>
             <br>
             <label>
-            <input type="radio" name="stock" value="true" checked>
+            <input type="radio" name="stock" value="true" required>
             In Stock
             </label>
             <br>
             <label>
-            <input type="radio" name="stock" value="false">
+            <input type="radio" name="stock" value="false" required>
             Out of Stock
             </label>
             <br>
-        <button type="submit">Add flower</button>
-        <button type="reset">Reset</button>
+            <button type="submit">Add flower</button>
+            <button type="reset">Reset</button>
         </form>
 </section>
 <section class="inventory">
 <header> <h2>Current Inventory <span class="count">(Inventory Quantity: 4)</span></h2></header>
-    <ul>
-        <li class="inventory-flower-a">
+    <ul class="inventory-list">
+        <li class="inventory-flower">
         <img src="./images/rose.jpg" alt="Rose-Bouquet">
             <p><strong>Name:</strong> Rose </p>
             <p><strong>Color:</strong> Red </p>
@@ -54,9 +55,7 @@
             <button class="in-stock">In Stock</button>
             <button type="remove">Remove flower</button>
         </li>
-    </ul>
-    <ul>
-        <li class="inventory-flower-b">
+        <li class="inventory-flower">
         <img src="./images/tulips.jpg" alt="Tulips">
             <p><strong>Name:</strong> Tulip </p>
             <p><strong>Color:</strong>
@@ -74,9 +73,7 @@
             <button class="in-stock">In Stock</button>
             <button type="remove">Remove flower</button>
         </li>
-    </ul>
-     <ul>
-        <li class="inventory-flower-c">
+        <li class="inventory-flower">
         <img src="./images/lavender.jpg" alt="Lavender">
             <p><strong>Name:</strong> Lavender </p>
             <p><strong>Color:</strong> Violet </p>
@@ -85,9 +82,7 @@
             <button class="in-stock">In Stock</button>
             <button type="remove">Remove flower</button>
         </li>
-    </ul>
-    <ul>
-        <li class="inventory-flower-d">
+        <li class="inventory-flower">
         <img src="./images/sunflower.jpg" alt="sunflower">
             <p><strong>Name:</strong> Sunflower </p>
             <p><strong>Color:</strong> Yellow </p>
